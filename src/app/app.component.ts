@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
+import { CardComponent } from './shared/components/card/card.component';
+import { HubComponent } from './Features/hub/hub.component';
+import { HeaderMenuComponent } from './shared/components/header-menu/header-menu.component';
 
 @Component({
-  selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: 
+  [ RouterModule, 
+    HeaderMenuComponent
+  ],
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'my-shelves';
+  title = 'Shelve Hubs';
 }

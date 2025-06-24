@@ -1,0 +1,35 @@
+<div class="card-container">
+  <div class="cards-wrapper-parent">
+    <div class="cards-wrapper">
+      <app-card *ngFor="let hubElement of hubs" class="card-wrapper" [hub]="hubElement"
+        (actionClick)="seeHubInDetail(hubElement.hubId)" (actionClickDelete)="openDeleteDialog(hubElement.hubId)"
+        (actionClickEdit)="openEditDialog(hubElement)">
+      </app-card>
+    </div>
+  </div>
+</div>
+
+
+
+<ng-template #template>
+  <h2 mat-dialog-title>Delete Hub</h2>
+  <mat-dialog-content>
+    <p>Are you sure you want to delete this Hub?</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="center">
+    <button mat-button color="accent" (click)="confirmDelete()">yes</button>
+    <button mat-button color="warn" mat-dialog-close>No</button>
+  </mat-dialog-actions>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</ng-template>
+
+
+  <!-- Botón en la primera fila -->
+
+  <!-- <div class="button-container">
+    <button mat-raised-button class="create-button" (click)="openCreateDialog()">
+      Create new Hub
+    </button>
+  </div> -->

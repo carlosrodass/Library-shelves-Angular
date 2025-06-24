@@ -1,0 +1,69 @@
+<h2 mat-dialog-title>Add new Book to this hub</h2>
+
+<form #bookForm="ngForm" (ngSubmit)="onSubmit()" class="edit-form">
+  <!-- <div class="form-group">
+    <label>Book Id:</label>
+    <input
+      type="text"
+      name="id"
+      [(ngModel)]="book.bookId"
+      [disabled]="true"
+    />
+  </div> -->
+
+  <div class="form-group">
+    <label>Title:</label>
+    <input type="text" name="title" [(ngModel)]="book.title" required />
+  </div>
+
+  <div class="form-group">
+    <label>Author:</label>
+    <input
+      type="text"
+      name="authorName"
+      [(ngModel)]="book.authorName"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label>Isbn:</label>
+    <input type="text" name="isbn" [(ngModel)]="book.isbn" required />
+  </div>
+
+  <div class="form-group">
+    <label>Price:</label>
+    <input type="number" name="price" [(ngModel)]="book.price" required />
+  </div>
+
+  <div class="form-group">
+    <label>Release Date:</label>
+    <input type="date" name="releaseDate" [(ngModel)]="book.releaseDate" required />
+  </div>
+
+  <div class="form-group">
+    <label>Image:</label>
+    <input type="text" name="image" [(ngModel)]="book.image" required />
+  </div>
+
+  <div class="form-group">
+    <label>Order:</label>
+    <input type="number" name="order" [(ngModel)]="book.order" required />
+  </div>
+
+  <div class="form-group">
+    <label>Status:</label>
+    <input
+      type="number"
+      name="statusId"
+      [(ngModel)]="book.statusId"
+      required
+    />
+  </div>
+
+  <div class="button-group">
+    <button type="submit"  class="save-button">Save changes</button>
+    <button mat-button mat-dialog-close class="close-button" (click)="onCancel()"> Close </button>
+  </div>
+</form>
+
+<!-- [disabled]="bookForm.invalid" -->

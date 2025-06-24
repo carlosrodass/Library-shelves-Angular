@@ -1,0 +1,44 @@
+  <!-- <table mat-table [dataSource]="data" class="mat-elevated-table tabla-dinamica">
+
+
+    <ng-container *ngFor="let column of getColumns()" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef class="header-cell"> {{ column | uppercase }} </th>
+
+      <td mat-cell *matCellDef="let element"> {{ element[column] }} </td>
+    </ng-container>
+
+    <ng-container *ngIf="column === 'actions'">
+      <button *ngFor="let action of actions" (click)="executeAction(action, element)">
+        {{ action.label }}
+      </button>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="getColumns()" class="header-row"></tr>
+    <tr mat-row *matRowDef="let row; columns: getColumns();" class="data-row"></tr>
+  
+  </table>
+ -->
+ <table mat-table [dataSource]="data" class="mat-elevated-table tabla-dinamica">
+
+  <ng-container *ngFor="let column of getColumns()" [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef class="header-cell">
+      {{ column !== 'actions' ? (column | uppercase) : 'ACTIONS' }}
+    </th>
+
+    <td mat-cell *matCellDef="let element">
+      <ng-container *ngIf="column !== 'actions'">
+        {{ element[column] }}
+      </ng-container>
+
+      <ng-container *ngIf="column === 'actions'">
+        <button *ngFor="let action of actions" (click)="executeAction(action, element)">
+          {{ action.label }}
+        </button>
+      </ng-container>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="getColumns()" class="header-row"></tr>
+  <tr mat-row *matRowDef="let row; columns: getColumns();" class="data-row"></tr>
+
+</table>

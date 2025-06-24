@@ -1,0 +1,20 @@
+<div class="container">
+    <!-- image -->
+    <div class="book-image-container">
+        <img [src]="book.image" alt="Card image" />
+    </div>
+    <!--header  +description + buttons  -->
+    <div class="book-content-container">
+        <!-- title -->
+        <div class="title">
+            <h3>{{book.title}}</h3>
+        </div>
+        <!-- short description -->
+        <div class="description">
+            <p><span>Author:</span>  {{book.authorName}}</p>
+            <p><span>ISBN:</span> {{book.isbn}}</p>
+            <p><span>Price:</span> {{book.price}} $</p>
+            <p><span>Date:</span> {{book.releaseDate}}</p>
+        </div>
+    </div>
+</div>
